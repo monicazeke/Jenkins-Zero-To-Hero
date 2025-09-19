@@ -51,13 +51,6 @@ pipeline {
             GIT_USER_NAME = "monicazeke"
         }
         steps {
-            checkout([$class: 'GitSCM',
-            branches: [[name: '*/main']],   // your branch
-            userRemoteConfigs: [[
-                url: 'https://github.com/monicazeke/Jenkins-Zero-To-Hero.git',
-                credentialsId: 'github'    // Jenkins credential for GitHub token
-            ]]
-            ])
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     git config user.email "monicadashinamoorthy@gmail.com"
