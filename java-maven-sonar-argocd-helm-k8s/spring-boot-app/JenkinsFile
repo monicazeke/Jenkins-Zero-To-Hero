@@ -7,11 +7,10 @@ pipeline {
   }
   stages {
     stage('Checkout') {
-       steps {
-        git branch: 'main',
-            url: 'https://github.com/monicazeke/Jenkins-Zero-To-Hero.git'
+    steps {
+        checkout scm
     }
-    }
+}
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
