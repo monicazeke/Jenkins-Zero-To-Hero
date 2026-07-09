@@ -6,9 +6,12 @@ pipeline {
     }
   }
   stages {
-    stage('Checkout') {
+  stage('Checkout') {
     steps {
-        checkout scm
+        git(
+            branch: 'main',
+            url: 'https://github.com/monicazeke/Jenkins-Zero-To-Hero.git'
+        )
     }
 }
     stage('Build and Test') {
