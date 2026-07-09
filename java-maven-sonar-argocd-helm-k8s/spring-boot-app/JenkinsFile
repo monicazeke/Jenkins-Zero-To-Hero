@@ -77,7 +77,8 @@ stage('Update Deployment File') {
                 echo "Current location"
                 pwd
 
-                echo "Git status"
+                git config --global --add safe.directory /var/lib/jenkins/workspace/ultimate-cicd
+
                 git status
 
                 git config user.email "monicadashinamoorthy@gmail.com"
